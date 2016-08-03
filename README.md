@@ -1,7 +1,12 @@
-### PokemonGoBot - Rocket Theme
+## PokemonGoBot - Rocket Theme
 External User Interface for [PokemonGoBot](https://github.com/jabbink/PokemonGoBot), a Java bot for Pokémon Go.
 
-#### Run Locally
+### Requirements
+* [Node.js](https://nodejs.org/en/)
+* [NPM](https://www.npmjs.com/) (bundled with Node.js)
+* [Bower](https://bower.io/) 
+
+### Run Locally
 Run the bot as explained in the [PokemonGoBot](https://github.com/jabbink/PokemonGoBot) repo and once its running:
 
 * Clone this repository and cd into this project's folder in the terminal.
@@ -10,10 +15,10 @@ Run the bot as explained in the [PokemonGoBot](https://github.com/jabbink/Pokemo
 * Run **gulp serve** 
 * Wait for the browser window to open.
 
-#### Run Remotely [NOT ENABLED YET]
+### Run Remotely [NOT ENABLED YET]
 * Run the bot as explained in the [PokemonGoBot](https://github.com/jabbink/PokemonGoBot) repo and once its running visit http://eruecco87.github.io/PokemonGoBot-RocketTheme
 
-#### Screenshots
+### Screenshots
 ![UI](http://content.screencast.com/users/eruecco87/folders/Jing/media/4d1f24a4-7096-4ba8-b2af-f06c61499d13/00000113.png)
 
 ![pokebank](http://content.screencast.com/users/eruecco87/folders/Jing/media/79247c29-137a-43f9-af1f-6f28fb1bdf94/00000115.png)
