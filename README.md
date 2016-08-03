@@ -2,7 +2,7 @@
 External User Interface for [PokemonGoBot](https://github.com/jabbink/PokemonGoBot), a Java bot for Pokémon Go.
 
 #### How to use
-Run the bot as explained in the [PokemonGoBot](https://github.com/jabbink/PokemonGoBot) repo and once its running visit http://username.github.io/PokemonGoBot-RocketTheme
+Run the bot as explained in the [PokemonGoBot](https://github.com/jabbink/PokemonGoBot) repo and once its running visit http://eruecco87.github.io/PokemonGoBot-RocketTheme
 
 #### Screenshots
 ![UI](http://content.screencast.com/users/eruecco87/folders/Jing/media/4d1f24a4-7096-4ba8-b2af-f06c61499d13/00000113.png)
