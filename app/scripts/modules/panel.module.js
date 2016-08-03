@@ -51,7 +51,7 @@ $(function() {
 
             panelStates = JSON.parse(window.localStorage[APP.Main.appId + 'PanelStates']);
 
-            elements.sortableContainer.html("");
+            elements.sortableContainer.html('');
 
             $.each(panelStates, function(index, panel) {
 
