@@ -15,8 +15,8 @@ Run the bot as explained in the [PokemonGoBot](https://github.com/jabbink/Pokemo
 * Run **gulp serve** 
 * Wait for the browser window to open.
 
-### Run Remotely [NOT ENABLED YET]
-* Run the bot as explained in the [PokemonGoBot](https://github.com/jabbink/PokemonGoBot) repo and once its running visit http://eruecco87.github.io/PokemonGoBot-RocketTheme
+### Run Remotely
+* Run the bot as explained in the [PokemonGoBot](https://github.com/jabbink/PokemonGoBot) repo and once its running visit http://oscarviquez.com/pogo/
 
 ### Screenshots
 ![UI](http://content.screencast.com/users/eruecco87/folders/Jing/media/4d1f24a4-7096-4ba8-b2af-f06c61499d13/00000113.png)
