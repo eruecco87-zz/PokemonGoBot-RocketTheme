@@ -6,16 +6,16 @@ $(function() {
 
     var APP = window.APP = window.APP || {};
 
-    window.socket = io.connect('ws://localhost:8001');
-
     APP.Modules = {};
-    APP.ModulesTemp = {};
 
     APP.Main = (function() {
 
       var elements = {
-        sortableContainer: $('.sortable-container'),
-        connectingModal: $('#connecting-modal')
+        settingsContainer: $('.settings'),
+        connectingModal: $('#connecting-modal'),
+        startButton: $('#start-button'),
+        address: $('#server-address'),
+        port: $('#server-port')
       };
 
       return {
@@ -24,64 +24,60 @@ $(function() {
 
           console.log('APP Initialized');
 
-          elements.connectingModal.modal('show');
+          elements.startButton.on('click', function() {
 
-          var connectionTimeout = setTimeout(function() {
+            var address = elements.address.val() || 'localhost',
+                port = elements.port.val() || 8001;
 
-            elements.connectingModal.find('i.fa').toggleClass('fa-heartbeat fa-ban');
-            elements.connectingModal.find('.modal-title').toggleClass('text-warning text-danger');
-            elements.connectingModal.find('.modal-title span').text('Connection Failed');
-            elements.connectingModal.find('.modal-body').text('Could not connect to PokemonGoBot, please check your settings and refresh this page.');
+            window.socket = io.connect('ws://' + address + ':' + port);
 
-          }, 10000);
+            elements.connectingModal.modal('show');
 
-          /* =================
-           SOCKET LISTENING
-           ==================== */
-          socket.on('connect', function() {
+            elements.connectingModal.find('.modal-title').attr('class', 'modal-title text-warning');
+            elements.connectingModal.find('.modal-title span').text('Connecting');
+            elements.connectingModal.find('.modal-body p').html('Attempting to connect to <strong>PokemonGoBot...</strong>');
 
-            window.clearTimeout(connectionTimeout);
+            var connectionTimeout = setTimeout(function() {
 
-            elements.connectingModal.find('.modal-title').toggleClass('text-warning text-success');
-            elements.connectingModal.find('.modal-title span').text('Connection Success');
-            elements.connectingModal.find('.modal-body').text('Connected to PokemonGoBot, happy botting!');
+              elements.connectingModal.find('i.fa').toggleClass('fa-heartbeat fa-ban');
+              elements.connectingModal.find('.modal-title').attr('class', 'modal-title text-danger');
+              elements.connectingModal.find('.modal-title span').text('Connection Failed');
+              elements.connectingModal.find('.modal-body p').html('Could not connect to <strong>PokemonGoBot</strong>, please check your settings and try again.');
 
-            setTimeout(function() {
-              elements.connectingModal.modal('hide');
-            }, 3000);
+            }, 5000);
 
-            socket.emit('init');
+            /* =================
+             SOCKET LISTENING
+             ==================== */
+            socket.on('connect', function() {
 
-          });
+              window.clearTimeout(connectionTimeout);
 
-          $('.panel-toggle').click(function () {
+              elements.connectingModal.find('.modal-title').attr('class', 'text-success');
+              elements.connectingModal.find('.modal-title span').text('Connection Success');
+              elements.connectingModal.find('.modal-body p').html('Connected to <strong>PokemonGoBot</strong>, happy botting!');
 
-            var panel = $(this).parents('.panel').find('.panel-body');
+              $.each(APP.Modules, function(index, module) {
 
-            if (panel.is(':visible')) {
+                module.init();
 
-              panel.slideUp();
-              panel.next().hide();
+              });
 
-            } else {
+              setTimeout(function() {
 
-              panel.slideDown();
-              panel.next().show();
+                elements.connectingModal.modal('hide');
+                elements.settingsContainer.fadeOut();
+                $('body').removeClass('no-settings');
 
-            }
+                socket.emit('init');
 
-            panel.parents('.panel').find('.panel-toggle i').toggleClass('fa-plus fa-minus');
+              }, 2000);
 
-          });
+            });
 
-          elements.sortableContainer.sortable({
-            handle: '.panel-heading',
-            placeholder: 'panel-placeholder',
-            connectWith: '.sortable-container'
           });
 
         }())
-
 
       };
 

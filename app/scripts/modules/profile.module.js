@@ -25,7 +25,7 @@ $(function() {
 
         currentLevel: undefined,
 
-        init: (function() {
+        init: function() {
 
           console.log('Profile Module Initialized');
 
@@ -87,7 +87,7 @@ $(function() {
 
           });
 
-        }())
+        }
 
       };
 

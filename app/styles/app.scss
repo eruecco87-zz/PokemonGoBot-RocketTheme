@@ -7,8 +7,8 @@ $icon-font-path: '../fonts/';
 
 
 @import "modules/panel";
+@import "modules/settings";
 @import "modules/map";
-@import "modules/gpx";
 @import "modules/pokebank";
 @import "modules/loot";
 @import "modules/eggs";
@@ -21,4 +21,8 @@ $icon-font-path: '../fonts/';
    =============== */
 body {
   padding-top: 65px;
+
+  &.no-settings {
+    overflow: hidden;
+  }
 }

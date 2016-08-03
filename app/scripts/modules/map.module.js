@@ -50,7 +50,7 @@ $(function() {
 
         gotoMarkers: [],
 
-        init: (function() {
+        init: function() {
 
           console.log('Map Module Initialized');
 
@@ -167,7 +167,7 @@ $(function() {
 
           });
 
-        }())
+        }
 
       };
 

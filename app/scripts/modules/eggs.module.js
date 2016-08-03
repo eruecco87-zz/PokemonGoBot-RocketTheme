@@ -19,7 +19,7 @@ $(function() {
 
         eggList: [],
 
-        init: (function() {
+        init: function() {
 
           console.log('Eggs Module Initialized');
 
@@ -55,7 +55,7 @@ $(function() {
 
           });
 
-        }())
+        }
 
       };
 

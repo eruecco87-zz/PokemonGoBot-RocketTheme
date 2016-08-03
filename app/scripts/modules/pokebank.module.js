@@ -43,7 +43,7 @@ $(function() {
 
         },
 
-        init: (function() {
+        init: function() {
 
           console.log('Pokebank Module Initialized');
 
@@ -109,7 +109,7 @@ $(function() {
 
           });
 
-        }())
+        }
 
       };
 

@@ -14,7 +14,7 @@ $(function() {
 
       return {
 
-        init: (function() {
+        init: function() {
 
           console.log('Log Module Initialized');
 
@@ -46,7 +46,7 @@ $(function() {
 
           });
 
-        }())
+        }
 
       };
 

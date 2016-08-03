@@ -22,7 +22,7 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="no-settings">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
 
@@ -52,6 +52,56 @@
 
     </nav>
     <!-- /nav -->
+
+    <div class="settings">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-sm-6 col-sm-offset-3">
+
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <i class="fa fa-cog" aria-hidden="true"></i> Settings
+              </div>
+
+              <div class="panel-body">
+
+                <div class="form-group">
+                  <label for="server-address">Server Address</label>
+                  <input type="text" class="form-control" id="server-address" placeholder="localhost" value="localhost">
+                </div>
+
+                <div class="form-group">
+                  <label for="server-port">Server Port</label>
+                  <input type="text" class="form-control" id="server-port" placeholder="8001" value="8001">
+                </div>
+
+              </div>
+
+              <div class="panel-footer clearfix">
+
+                <div class="btn-group pull-right" role="group">
+                  <button type="button" class="btn btn-success" id="start-button">Start</button>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!-- /col -->
+
+        </div>
+        <!-- /row -->
+
+      </div>
+      <!-- /container -->
+
+    </div>
+    <!-- /settings -->
 
     <div class="container-fluid">
 
@@ -304,13 +354,14 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title text-warning"><i class="fa fa-heartbeat" aria-hidden="true"></i> <span>Connecting</span></h4>
+            <h4 class="modal-title text-warning"><i class="fa fa-heartbeat" aria-hidden="true"></i> <span></span></h4>
           </div>
           <div class="modal-body">
-            <p>Attempting to connect to <strong>PokemonGoBot...</strong></p>
+            <p></p>
           </div>
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>
+      </div><!-- /modal-dialog -->
+    </div><!-- /modal -->
 
     <!-- Google Maps -->
     <script>
@@ -346,6 +397,7 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/utils.js"></script>
+    <script src="scripts/modules/panel.module.js"></script>
     <script src="scripts/modules/map.module.js"></script>
     <script src="scripts/modules/profile.module.js"></script>
     <script src="scripts/modules/eggs.module.js"></script>

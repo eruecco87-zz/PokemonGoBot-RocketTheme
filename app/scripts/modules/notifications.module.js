@@ -39,7 +39,7 @@ $(function() {
 
         },
 
-        init: (function() {
+        init: function() {
 
           console.log('Notifications Module Initialized');
 
@@ -103,7 +103,7 @@ $(function() {
 
           });
 
-        }())
+        }
 
       };
 
