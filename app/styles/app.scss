@@ -1,0 +1,24 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+
+@import "modules/panel";
+@import "modules/map";
+@import "modules/gpx";
+@import "modules/pokebank";
+@import "modules/loot";
+@import "modules/eggs";
+@import "modules/profile";
+@import "modules/log";
+
+
+/* ===============
+    GENERAL STYLES
+   =============== */
+body {
+  padding-top: 65px;
+}

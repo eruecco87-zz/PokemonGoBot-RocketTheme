@@ -1,0 +1,358 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PokemonGoBot RocketTheme</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/app.css -->
+    <link rel="stylesheet" href="styles/app.css">
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Pok&eacute;mon Go Bot GUI</a>
+        </div>
+        <!-- /navbar-header -->
+
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/jabbink/PokemonGoBot/issues" target="_blank">Issues</a></li>
+            <li><a href="https://github.com/jabbink/PokemonGoBot/releases" target="_blank">Releases</a></li>
+          </ul>
+        </div>
+        <!-- /navbar-collapse -->
+
+      </div>
+      <!-- /container-fluid -->
+
+    </nav>
+    <!-- /nav -->
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-sm-12 sortable-container">
+
+          <div class="panel-sortable panel-map">
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <i class="fa fa-globe" aria-hidden="true"></i> Map
+                <div class="btn-group pull-right" role="group">
+                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="panel-body">
+
+                <div class="panel-loader"><div class="panel-spinner"></div></div>
+
+                <div class="map-holder">
+                  <div id="map"></div>
+                </div>
+
+              </div>
+
+              <div class="panel-footer clearfix">
+
+                <div class="form-horizontal pull-left">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="map_autofollow" checked=""> Autofollow
+                    </label>
+                  </div>
+                </div>
+
+                <div class="btn-group pull-right" role="group">
+                  <button type="button" class="btn btn-xs btn-warning" id="pokevision-button">Open in Pok&eacute;Vision</button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- /Map -->
+
+        </div>
+
+        <div class="col-sm-4 sortable-container">
+
+          <div class="panel-sortable panel-notifications">
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <i class="fa fa-bell-o" aria-hidden="true"></i> Notifications
+                <div class="btn-group pull-right" role="group">
+                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="panel-body">
+
+                <div class="panel-loader"><div class="panel-spinner"></div></div>
+
+                <div class="form-horizontal">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" class="notification_check" id="notification_caught_pokemon" checked> Caught Pokemon
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" class="notification_check" id="notification_next_level" checked> Next Level
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- /Notifications -->
+
+          <div class="panel-sortable panel-eggs">
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <i class="fa fa-bullseye" aria-hidden="true"></i> Eggs
+                <div class="btn-group pull-right" role="group">
+                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="panel-body">
+
+                <div class="panel-loader"><div class="panel-spinner"></div></div>
+
+                <div class="egg-list"></div>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- /Eggs -->
+
+        </div>
+        <!-- /col -->
+
+        <div class="col-sm-4 sortable-container">
+
+          <div class="panel-sortable panel-pokebank">
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <i class="fa fa-archive" aria-hidden="true"></i> Pokebank
+                <div class="btn-group pull-right" role="group">
+                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="panel-body">
+
+                <div class="panel-loader"><div class="panel-spinner"></div></div>
+
+                <div class="pokemon-list"></div>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- /Pokebank -->
+
+          <div class="panel-sortable panel-loot">
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <i class="fa fa-history" aria-hidden="true"></i> Loot History
+                <div class="btn-group pull-right" role="group">
+                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="panel-body">
+
+                <div class="panel-loader"><div class="panel-spinner"></div></div>
+
+                <div class="alert alert-warning">No Pok&eacute;Stops looted yet!</div>
+
+                <div class="loot-wrapper">
+
+                  <ul class="loot-history list-unstyled"></ul>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- /Log -->
+
+        </div>
+        <!-- /col -->
+
+        <div class="col-sm-4 sortable-container">
+
+          <div class="panel-sortable panel-profile">
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <i class="fa fa-user" aria-hidden="true"></i> Profile
+                <div class="btn-group pull-right" role="group">
+                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="panel-body">
+
+                <div class="panel-loader"><div class="panel-spinner"></div></div>
+
+                <table id="profile-table" class="table">
+                  <tr>
+                    <th>Name</th>
+                    <td><span id="profile-name"></span></td>
+                  </tr>
+                  <tr>
+                    <th>Team</th>
+                    <td><span class="badge"></span> <span id="profile-team"></span></td>
+                  </tr>
+                  <tr>
+                    <th>Stardust</th>
+                    <td><span id="profile-stardust"></span></td>
+                  </tr>
+                  <tr>
+                    <th>Level</th>
+                    <td><span id="profile-level-progress"></span><span id="profile-level"></span></td>
+                  </tr>
+                  <tr>
+                    <th>Pokebank</th>
+                    <td><span id="profile-pokebank-progress"></span><span id="profile-pokebank"></span></td>
+                  </tr>
+                  <tr>
+                    <th>Items</th>
+                    <td><span id="profile-items-progress"></span><span id="profile-items"></span></td>
+                  </tr>
+                </table>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- /Profile -->
+
+          <div class="panel-sortable panel-log">
+            <div class="panel panel-default">
+
+              <div class="panel-heading">
+                <i class="fa fa-terminal" aria-hidden="true"></i>
+                <div class="btn-group pull-right" role="group">
+                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+
+              <div class="panel-body">
+
+                <div class="panel-loader"><div class="panel-spinner"></div></div>
+
+                <div class="log-wrapper">
+
+                  <div class="log"></div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- /Log -->
+
+        </div>
+        <!-- /col -->
+
+      </div>
+      <!-- /row -->
+
+    </div>
+    <!-- /container-fluid -->
+
+    <div id="connecting-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-warning"><i class="fa fa-heartbeat" aria-hidden="true"></i> <span>Connecting</span></h4>
+          </div>
+          <div class="modal-body">
+            <p>Attempting to connect to <strong>PokemonGoBot...</strong></p>
+          </div>
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Google Maps -->
+    <script>
+      function init() {
+
+        window.map = new google.maps.Map(document.getElementById('map'), {
+          center: {
+            lat: 0,
+            lng: 0
+          },
+          zoom: 16,
+          scrollwheel: false
+        });
+
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMZB_Zo029aBahPYLVG7eNV9bMcy5elgM&callback=init"></script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- Socket.IO -->
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/modules/map.module.js"></script>
+    <script src="scripts/modules/profile.module.js"></script>
+    <script src="scripts/modules/eggs.module.js"></script>
+    <script src="scripts/modules/pokebank.module.js"></script>
+    <script src="scripts/modules/loot.module.js"></script>
+    <script src="scripts/modules/log.module.js"></script>
+    <script src="scripts/modules/notifications.module.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

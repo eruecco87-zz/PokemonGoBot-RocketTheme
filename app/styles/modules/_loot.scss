@@ -1,0 +1,22 @@
+.panel-loot {
+
+  .alert {
+    margin-bottom: 0;
+  }
+
+  .loot-wrapper {
+    display: none;
+    height: 200px;
+    max-height: 200px;
+    overflow: scroll;
+
+    .loot-history {
+
+      li {
+        border-bottom: 1px solid #eaeaea;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
