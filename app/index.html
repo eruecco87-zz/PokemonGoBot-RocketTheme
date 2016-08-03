@@ -35,14 +35,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Pok&eacute;mon Go Bot GUI</a>
+          <a class="navbar-brand" href="#">Pok&eacute;mon Go Bot</a>
         </div>
         <!-- /navbar-header -->
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://github.com/jabbink/PokemonGoBot/issues" target="_blank">Issues</a></li>
-            <li><a href="https://github.com/jabbink/PokemonGoBot/releases" target="_blank">Releases</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" id="reset-panels-link">Reset panel positions</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
         <!-- /navbar-collapse -->
@@ -53,6 +57,8 @@
     </nav>
     <!-- /nav -->
 
+    <div class="nanobar-holder"></div>
+
     <div class="settings">
 
       <div class="container">
@@ -61,7 +67,7 @@
 
           <div class="col-sm-6 col-sm-offset-3">
 
-            <div class="panel panel-default">
+            <div class="panel panel-danger">
 
               <div class="panel-heading">
                 <i class="fa fa-cog" aria-hidden="true"></i> Settings
@@ -84,7 +90,7 @@
               <div class="panel-footer clearfix">
 
                 <div class="btn-group pull-right" role="group">
-                  <button type="button" class="btn btn-success" id="start-button">Start</button>
+                  <button type="button" class="btn btn-danger" id="start-button">Start</button>
                 </div>
 
               </div>
@@ -107,15 +113,15 @@
 
       <div class="row">
 
-        <div class="col-sm-12 sortable-container">
+        <div class="col-sm-12 sortable-container" id="sortable-container-1">
 
-          <div class="panel-sortable panel-map">
-            <div class="panel panel-default">
+          <div class="panel-sortable panel-map" id="panel-1">
+            <div class="panel panel-danger">
 
               <div class="panel-heading">
                 <i class="fa fa-globe" aria-hidden="true"></i> Map
                 <div class="btn-group pull-right" role="group">
-                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                  <button type="button" class="panel-toggle btn btn-xs btn-danger"><i class="fa fa-minus" aria-hidden="true"></i></button>
                 </div>
               </div>
 
@@ -151,15 +157,15 @@
 
         </div>
 
-        <div class="col-sm-4 sortable-container">
+        <div class="col-sm-4 sortable-container" id="sortable-container-2">
 
-          <div class="panel-sortable panel-notifications">
-            <div class="panel panel-default">
+          <div class="panel-sortable panel-notifications" id="panel-2">
+            <div class="panel panel-danger">
 
               <div class="panel-heading">
                 <i class="fa fa-bell-o" aria-hidden="true"></i> Notifications
                 <div class="btn-group pull-right" role="group">
-                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                  <button type="button" class="panel-toggle btn btn-xs btn-danger"><i class="fa fa-minus" aria-hidden="true"></i></button>
                 </div>
               </div>
 
@@ -186,13 +192,13 @@
           </div>
           <!-- /Notifications -->
 
-          <div class="panel-sortable panel-eggs">
-            <div class="panel panel-default">
+          <div class="panel-sortable panel-eggs" id="panel-3">
+            <div class="panel panel-danger">
 
               <div class="panel-heading">
                 <i class="fa fa-bullseye" aria-hidden="true"></i> Eggs
                 <div class="btn-group pull-right" role="group">
-                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                  <button type="button" class="panel-toggle btn btn-xs btn-danger"><i class="fa fa-minus" aria-hidden="true"></i></button>
                 </div>
               </div>
 
@@ -211,15 +217,15 @@
         </div>
         <!-- /col -->
 
-        <div class="col-sm-4 sortable-container">
+        <div class="col-sm-4 sortable-container" id="sortable-container-3">
 
-          <div class="panel-sortable panel-pokebank">
-            <div class="panel panel-default">
+          <div class="panel-sortable panel-pokebank" id="panel-4">
+            <div class="panel panel-danger">
 
               <div class="panel-heading">
                 <i class="fa fa-archive" aria-hidden="true"></i> Pokebank
                 <div class="btn-group pull-right" role="group">
-                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                  <button type="button" class="panel-toggle btn btn-xs btn-danger"><i class="fa fa-minus" aria-hidden="true"></i></button>
                 </div>
               </div>
 
@@ -235,13 +241,13 @@
           </div>
           <!-- /Pokebank -->
 
-          <div class="panel-sortable panel-loot">
-            <div class="panel panel-default">
+          <div class="panel-sortable panel-loot" id="panel-5">
+            <div class="panel panel-danger">
 
               <div class="panel-heading">
                 <i class="fa fa-history" aria-hidden="true"></i> Loot History
                 <div class="btn-group pull-right" role="group">
-                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                  <button type="button" class="panel-toggle btn btn-xs btn-danger"><i class="fa fa-minus" aria-hidden="true"></i></button>
                 </div>
               </div>
 
@@ -266,15 +272,15 @@
         </div>
         <!-- /col -->
 
-        <div class="col-sm-4 sortable-container">
+        <div class="col-sm-4 sortable-container" id="sortable-container-4">
 
-          <div class="panel-sortable panel-profile">
-            <div class="panel panel-default">
+          <div class="panel-sortable panel-profile" id="panel-6">
+            <div class="panel panel-danger">
 
               <div class="panel-heading">
                 <i class="fa fa-user" aria-hidden="true"></i> Profile
                 <div class="btn-group pull-right" role="group">
-                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                  <button type="button" class="panel-toggle btn btn-xs btn-danger"><i class="fa fa-minus" aria-hidden="true"></i></button>
                 </div>
               </div>
 
@@ -315,13 +321,13 @@
           </div>
           <!-- /Profile -->
 
-          <div class="panel-sortable panel-log">
-            <div class="panel panel-default">
+          <div class="panel-sortable panel-log" id="panel-7">
+            <div class="panel panel-danger">
 
               <div class="panel-heading">
                 <i class="fa fa-terminal" aria-hidden="true"></i>
                 <div class="btn-group pull-right" role="group">
-                  <button type="button" class="panel-toggle btn btn-xs btn-primary"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                  <button type="button" class="panel-toggle btn btn-xs btn-danger"><i class="fa fa-minus" aria-hidden="true"></i></button>
                 </div>
               </div>
 
@@ -350,6 +356,12 @@
     </div>
     <!-- /container-fluid -->
 
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted"><a href="https://github.com/eruecco87/PokemonGoBot-RocketTheme" target="_blank">Github</a></p>
+      </div>
+    </footer>
+
     <div id="connecting-modal" class="modal fade" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -358,6 +370,19 @@
           </div>
           <div class="modal-body">
             <p></p>
+          </div>
+        </div>
+      </div><!-- /modal-dialog -->
+    </div><!-- /modal -->
+
+    <div id="panel-reset-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-warning"><i class="fa fa-heartbeat" aria-hidden="true"></i> <span>Panels Reset</span></h4>
+          </div>
+          <div class="modal-body">
+            <p>The panel positions have been reset, please refresh the page.</p>
           </div>
         </div>
       </div><!-- /modal-dialog -->
@@ -384,6 +409,7 @@
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="/bower_components/nanobar/nanobar.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

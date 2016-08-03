@@ -12,13 +12,20 @@ $(function() {
 
       var elements = {
         settingsContainer: $('.settings'),
+        nanobarHolder: $('.nanobar-holder')[0],
         connectingModal: $('#connecting-modal'),
         startButton: $('#start-button'),
         address: $('#server-address'),
         port: $('#server-port')
       };
 
+      window.nanobar = new Nanobar({
+        target: elements.nanobarHolder
+      });
+
       return {
+
+        appId: 'PoGoBotRocket',
 
         init: (function() {
 
@@ -53,7 +60,7 @@ $(function() {
 
               window.clearTimeout(connectionTimeout);
 
-              elements.connectingModal.find('.modal-title').attr('class', 'text-success');
+              elements.connectingModal.find('.modal-title').attr('class', 'modal-title text-success');
               elements.connectingModal.find('.modal-title span').text('Connection Success');
               elements.connectingModal.find('.modal-body p').html('Connected to <strong>PokemonGoBot</strong>, happy botting!');
 

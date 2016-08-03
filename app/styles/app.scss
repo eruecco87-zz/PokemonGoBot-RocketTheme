@@ -6,6 +6,8 @@ $icon-font-path: '../fonts/';
 // endbower
 
 
+@import "layout/footer";
+
 @import "modules/panel";
 @import "modules/settings";
 @import "modules/map";
@@ -19,10 +21,30 @@ $icon-font-path: '../fonts/';
 /* ===============
     GENERAL STYLES
    =============== */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-top: 65px;
+  margin-bottom: 60px;
 
   &.no-settings {
     overflow: hidden;
+  }
+
+  .nanobar-holder {
+    position: absolute;
+    top: 50px;
+    min-height: 10px;
+    width: 100%;
+
+    .nanobar {
+
+      .bar {
+        background: $brand-danger;
+      }
+    }
   }
 }

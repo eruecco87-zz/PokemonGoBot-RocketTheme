@@ -5,7 +5,8 @@
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
     "jquery-ui": "^1.12.0",
-    "font-awesome": "^4.6.3"
+    "font-awesome": "^4.6.3",
+    "nanobar": "^0.4.2"
   },
   "overrides": {
     "bootstrap-sass": {
