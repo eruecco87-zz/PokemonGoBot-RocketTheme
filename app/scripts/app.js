@@ -30,7 +30,7 @@ $(function() {
         init: (function() {
 
           console.log('APP Initialized');
-
+          var modulesInitialized = false;
           elements.startButton.on('click', function() {
 
             var address = elements.address.val() || 'localhost',
@@ -63,12 +63,13 @@ $(function() {
               elements.connectingModal.find('.modal-title').attr('class', 'modal-title text-success');
               elements.connectingModal.find('.modal-title span').text('Connection Success');
               elements.connectingModal.find('.modal-body p').html('Connected to <strong>PokemonGoBot</strong>, happy botting!');
-
-              $.each(APP.Modules, function(index, module) {
-
-                module.init();
-
-              });
+              if(!modulesInitialized){
+                $.each(APP.Modules, function(index, module) {
+                  module.init();
+                });  
+                modulesInitialized = true;
+              }
+              
 
               setTimeout(function() {
 
