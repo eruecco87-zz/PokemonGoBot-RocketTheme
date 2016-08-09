@@ -65,12 +65,6 @@ $(function() {
 
           });
 
-          $('#pokevision-button').click(function(){
-
-            window.open('https://pokevision.com/#/@'+map.center.lat()+','+map.center.lng(), '_blank');
-
-          });
-
           google.maps.event.addListener(map, 'rightclick', function(event) {
 
             var lat = event.latLng.lat();
