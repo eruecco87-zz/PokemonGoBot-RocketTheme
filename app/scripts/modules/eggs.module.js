@@ -30,11 +30,6 @@ $(function() {
            SOCKET LISTENING
            ================ */
           socket.on('eggs', function(data){
-            console.log("In eggs socket listening: ");
-            console.log("data: ");
-            console.log(data);
-            console.log("data.eggs: ");
-            console.log(data.eggs);
 
             APP.Modules.Eggs.eggList = data.eggs;
 
