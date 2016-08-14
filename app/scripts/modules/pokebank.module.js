@@ -11,7 +11,7 @@ $(function() {
       };
 
       var icons = {
-        pokemon: function(id){ return 'http://pokeapi.co/media/sprites/pokemon/' + id + '.png'; }
+        pokemon: function(id){ return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + id + '.png'; }
       };
 
       return {
