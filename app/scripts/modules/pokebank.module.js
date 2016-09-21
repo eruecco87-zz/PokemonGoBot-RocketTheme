@@ -11,7 +11,7 @@ $(function() {
       };
 
       var icons = {
-        pokemon: function(id){ return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + id + '.png'; }
+        pokemon: function(id){ return 'https://www.weebly.com/editor/uploads/6/6/2/8/66286027/custom_themes/748668897894441117/files/pokemon/' + id + '.png'; }
       };
 
       return {
